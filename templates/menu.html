@@ -1,0 +1,36 @@
+{% if session['name'] %}
+{% extends "layout.html" %}
+{% block body %}
+<div class = "row">
+	<div class = "featurePanel col-xs-12 col-md-8">
+		<h2 class = "featureHeader">Featured</h2>
+		<a class = "featureContent" href = "/singleEvent">
+			<div class = "featureContent row">
+				<div class = "col-xs-12 col-md-5"><img class = "img-responsive" src = "{{ url_for('static', filename='./img/party1.jpg') }}"/></div>
+				<div class = "col-xs-12 col-md-7">
+					<h2 class = "eventHeader">Sunflower Festival 2015</h2>
+					<ul class = "infoPane">
+						<li><strong>Date:</strong> 29 August - 30 August</li>
+						<li><strong>Venue:</strong> Cape Town Ostrich Ranch</li>
+						<li><strong>About:</strong> Established 3 years ago, The Sunflower
+							Festival exploded onto the local festival calendar and immediately
+							established itself not only the official Festival opening event but
+							also one of the biggest festivals on the calendar, seeing thousands
+							of revelers braving the cold to welcome the onset of spring.</li>
+					</ul>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class = "categoryPanel col-xs-12 col-md-4">
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Full On</a>
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Progressive</a>
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Dark</a>
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Minimal</a>
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Psytrance</a>
+		<a class="btn btn-success tblBtn catBtn" href="#" role="button">EDM</a>
+	</div>
+</div>
+{% endblock %}
+{% endif %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class = "row">
+	<h3 class = "text-center">{{msg}}</h3>
+	<form class = "loginForm text-center" action="/" method = "post">
+		<input name = "username" placeholder = " username" type = "text" required=""></input>
+	</br>
+		<input name = "password" placeholder = " password" type = "password" required=""></input>
+	</br>
+		<button class = "btn btn-success loginBtn">Log In</button>
+	</br>
+		<a class="btn btn-primary loginBtn" href="/signUp" role="button">Sign Up</a>
+	</br>
+	<a href="#">Forgot your password?</a>
+	</form>
+
+</div>
+
+{% endblock %}

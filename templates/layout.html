@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Psytrancr</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+<div class= "container">
+  {% if session['name'] %}
+    <div class = "navbar navbar-fixed-top"><p>Hello there, <strong>{{session['name']}}</p></strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a></div>
+  {% endif %}
+  <div class = "row">
+  	<div class = "col-xs-0 col-md-2"></div>
+  	<div class = "col-xs-12 col-md-8">
+  		<a href = "/"><img class = "img-responsive logo" src = "{{ url_for('static', filename='./img/logo.png') }}"></a>
+  	</div>
+  	<div class = "col-xs-0 col-md-2"></div>
+  </div>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+  {% if session['name'] %}
+    <div class = "navbar navbar-fixed-bottom">
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">View</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Add</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Going</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Options</div></a>
+    </div>
+  {% endif %}
+  {% block body %}{% endblock %}
+</div>
