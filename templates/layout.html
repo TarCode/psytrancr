@@ -5,7 +5,13 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
 <div class= "container">
   {% if session['name'] %}
-    <div class = "navbar navbar-fixed-top"><p>Hello there, <strong>{{session['name']}}</p></strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a></div>
+    <div class = "menuHead navbar navbar-fixed-top">
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">View</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Add</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Going</div></a>
+      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Options</div></a>
+    </div>
+    <div class = "userHead navbar navbar-fixed-top"><p>Hello there, <strong>{{session['name']}}</p></strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a></div>
   {% endif %}
   <div class = "row">
   	<div class = "col-xs-0 col-md-2"></div>
@@ -17,13 +23,6 @@
   {% for message in get_flashed_messages() %}
     <div class=flash>{{ message }}</div>
   {% endfor %}
-  {% if session['name'] %}
-    <div class = "navbar navbar-fixed-bottom">
-      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">View</div></a>
-      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Add</div></a>
-      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Going</div></a>
-      <a class = "menuAnc text-center" href = "#"><div class = "menuBtn col-xs-3 col-md-3">Options</div></a>
-    </div>
-  {% endif %}
+
   {% block body %}{% endblock %}
 </div>

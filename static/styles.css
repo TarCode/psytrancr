@@ -5,6 +5,50 @@ body{
 input{
 	color: #46243D;
 }
+.userHead{
+	display: block;
+	background-color: #46243D;
+	color: #fff;
+	padding: 3px;
+	padding-top: 10px;
+}
+.userHead p{
+	float: left;
+	margin-left: 10px;
+}
+.menuHead{
+	margin-top: 3.2em;
+	background-color: #86A136;
+}
+
+.menuAnc{
+	color: #fff;
+	font-weight: bolder;
+ }
+
+.menuAnc:hover{
+	color: #fff;
+}
+.menuBtn{
+	height: 100%;
+	margin:0;
+	padding-top:1em;
+	padding-bottom:1em;
+	background-color: #86A136;
+}
+.menuBtn:hover{
+	background-color: #46243D;
+	height: 100%;
+	margin:0;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
+.logo{
+	padding: 1.5em;
+	margin-top: 5.5em;
+}
+
 .addBtn{
 	font-size: 1.5em;
 	font-weight: bold;
@@ -25,7 +69,7 @@ input{
 	background-size: auto;
 	background-position: left;
 	background-size: contain;
-	text-align: right;
+	text-align: center;
 }
 
 .backBtn{
@@ -53,28 +97,11 @@ input{
 	width: 12em;
 }
 
-.logo{
-	padding: 1.5em;
-	margin-top: 30px;
-}
-
 .loginForm input, select{
 	height: 2em;
 	width: 12.5em;
 	font-size: 20px;
 	margin-bottom: 0.7em;
-}
-
-.navbar{
-	background-color: #46243D;
-	color: #fff;
-	padding: 3px;
-	padding-top: 10px;
-}
-
-.navbar p{
-	float: left;
-	margin-left: 10px;
 }
 
 strong{
@@ -131,27 +158,6 @@ strong{
 .featureContent:hover{
 	text-decoration: none;
 	color: #fff;
-}
-.menuAnc{
-	color: #fff;
-	font-weight: bolder;
- }
-
-.menuAnc:hover{
-	color: #fff;
-}
-.menuBtn{
-	height: 100%;
-	margin:0;
-	padding-top:1em;
-	padding-bottom:1em;
-}
-.menuBtn:hover{
-	background-color: #86A136;
-	height: 100%;
-	margin:0;
-	padding-top:1em;
-	padding-bottom:1em;
 }
 
 .eventHeader{
