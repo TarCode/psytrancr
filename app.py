@@ -58,7 +58,10 @@ def signUp():
 
 @app.route('/menu')
 def show_menu():
-    return render_template('menu.html')
+    cur = mysql.connection.cursor()
+    cur.execute('''SELECT img_url, event_name, startDate, endDate, venue, about FROM events, event_info WHERE events.event_info_id = event_info.id''')
+    entries = [dict(img_url=row[0], event_name=row[1], startDate=row[2], endDate=row[3], venue=row[4], about=row[5]) for row in cur.fetchall()]
+    return render_template('menu.html', entries=entries)
 
 @app.route('/events', methods=['GET', 'POST'])
 def show_events():

@@ -4,34 +4,23 @@
 <div class = "row">
 	<div class = "featurePanel col-xs-12 col-md-8">
 		<h2 class = "featureHeader">Featured</h2>
-		<a class = "featureContent" href = "/singleEvent">
+		{% for entry in entries %}
+		<a href = "/singleEvent">
 			<div class = "featureContent row">
-				<div class = "col-xs-12 col-md-5"><img class = "img-responsive" src = "{{ url_for('static', filename='./img/party1.jpg') }}"/></div>
+				<div class = "col-xs-12 col-md-5"><img class = "img-responsive" src = "{{entry.img_url}}"/></div>
 				<div class = "col-xs-12 col-md-7">
-					<h2 class = "eventHeader">Sunflower Festival 2015</h2>
+					<h2 class = "eventHeader">{{ entry.event_name }}</h2>
 					<ul class = "infoPane">
-						<li><strong>Date:</strong> 29 August - 30 August</li>
-						<li><strong>Venue:</strong> Cape Town Ostrich Ranch</li>
-						<li><strong>About:</strong> Established 3 years ago, The Sunflower
-							Festival exploded onto the local festival calendar and immediately
-							established itself not only the official Festival opening event but
-							also one of the biggest festivals on the calendar, seeing thousands
-							of revelers braving the cold to welcome the onset of spring.</li>
+						<li><strong>Date:</strong> {{ entry.startDate }} - {{ entry.endDate }}</li>
+						<br/>
+						<li><strong>Venue:</strong> {{ entry.venue }}</li>
+						<br/>
+						<li><strong>About:</strong> {{ entry.about }}</li>
 					</ul>
 				</div>
 			</div>
 		</a>
-	</div>
-
-	<div class = "categoryPanel col-xs-6 col-md-2">
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">1 Day</a>
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">2 Days</a>
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">+3 Days</a>
-	</div>
-	<div class = "categoryPanel col-xs-6 col-md-2">
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Club</a>
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Outdoor</a>
-		<a class="btn btn-success tblBtn catBtn" href="#" role="button">Open Air</a>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}
