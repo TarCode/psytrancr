@@ -56,15 +56,15 @@ def signUp():
 	else:
     		return render_template('signUp.html')
 
-@app.route('/menu')
+@app.route('/home')
 def show_menu():
     cur = mysql.connection.cursor()
-    cur.execute('''SELECT img_url, event_name, startDate, endDate, venue, about FROM events, event_info WHERE events.event_info_id = event_info.id''')
-    entries = [dict(img_url=row[0], event_name=row[1], startDate=row[2], endDate=row[3], venue=row[4], about=row[5]) for row in cur.fetchall()]
+    cur.execute('''SELECT events.event_id, img_url, event_name, startDate, endDate, venue, facebook, tickets FROM events, event_info, links WHERE events.event_info_id = event_info.id AND events.event_id = links.event_id''')
+    entries = [dict(event_id=row[0], img_url=row[1], event_name=row[2], startDate=row[3], endDate=row[4], venue=row[5], facebook=row[6], tickets=row[7]) for row in cur.fetchall()]
     return render_template('menu.html', entries=entries)
 
-@app.route('/events', methods=['GET', 'POST'])
-def show_events():
+@app.route('/events/<int:event_id>', methods=['GET', 'POST'])
+def show_events(event_id):
     if request.method == 'POST':
     	if(request.form['event_name'] != ""):
     			cur = mysql.connection.cursor()
@@ -78,9 +78,9 @@ def show_events():
                 return render_template('show_events.html', entries=entries, msg = "field cannot be blank")
     else:
         	cur = mysql.connection.cursor()
-        	cur.execute('''SELECT * FROM events''')
-        	entries = [dict(event_id=row[0], event_name=row[1]) for row in cur.fetchall()]
-            	return render_template('show_events.html', entries=entries)
+        	cur.execute('''SELECT img_url, event_name, startDate, endDate, venue, about, facebook, tickets FROM events, event_info, links WHERE events.event_id = \"%s\" AND events.event_info_id = event_info.id AND events.event_id = links.event_id''', (request.args.get('entry.event_id')))
+                entries = [dict(img_url=row[0], event_name=row[1], startDate=row[2], endDate=row[3], venue=row[4], about=row[5], facebook=row[6], tickets=row[7]) for row in cur.fetchall()]
+        	return render_template('show_events.html', entries=entries)
 
 @app.route('/clear')
 def clearsession():

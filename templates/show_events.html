@@ -11,10 +11,23 @@
     <table class = "table table-bordered table-striped">
 
     {% for entry in entries %}
-      <tr>
-        <td>{{ entry.cat_id }}</td>
-        <td>{{ entry.event_name}}</td>
-      </tr>
+    <div class = "featureContent row">
+      <div class = "col-xs-4 col-md-4"><img class = "img-responsive" src = "{{entry.img_url}}"/></div>
+      <div class = "col-xs-6 col-md-6">
+        <h2 class = "eventHeader">{{ entry.event_name }}</h2>
+        <ul class = "infoPane">
+          <li><strong>Date:</strong> {{ entry.startDate }} - {{ entry.endDate }}</li>
+          <br/>
+          <li><strong>Venue:</strong> {{ entry.venue }}</li>
+          <br/>
+          <li><strong>About:</strong> {{ entry.about }}</li>
+        </ul>
+      </div>
+      <div class = "col-xs-2 col-md-2">
+        <a class="btn btn-primary linkBtn" target = "blank" href="{{entry.facebook}}" role="button"><br/>Facebook</a>
+        <a class="btn btn-primary linkBtn" target = "blank" href="{{entry.tickets}}" role="button"><br/>Tickets</a>
+      </div>
+    </div>
     {% else %}
       <em>Unbelievable.  No entries here so far</em>
     {% endfor %}

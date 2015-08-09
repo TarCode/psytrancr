@@ -26,7 +26,13 @@ input{
 	color: #fff;
 	font-weight: bolder;
  }
-
+.eventAnc{
+	text-decoration: none;
+	color: #fff;
+}
+.eventAnc:hover{
+	color: #fff;
+}
 .menuAnc:hover{
 	color: #fff;
 }
@@ -47,6 +53,9 @@ input{
 
 .logo{
 	padding: 1.5em;
+	padding-left: 0em;
+	width: 50%;
+	height: auto;
 	margin-top: 5.5em;
 }
 
@@ -56,6 +65,19 @@ input{
 	margin-bottom: 0.3em;
 	border-radius: 0px;
 	width: 6em;
+}
+.partyImg{
+	border-radius: 100%;
+	margin-bottom: 2em;
+}
+.linkBtn{
+	width: 45%;
+	height: 6em;
+	margin-bottom: 1em;
+	border-radius: 100%;
+	padding-top: 0.7em;
+	font-weight: bold;
+	margin-top: 1em;
 }
 .tblBtn{
 	width: 100%;
@@ -108,7 +130,15 @@ input{
 strong{
 	color: #990;
 }
-
+.nameBox{
+	min-height: 2em;
+}
+.infoBox{
+	min-height: 5em;
+}
+.buttonBox{
+	margin-left: 0.5em;
+}
 .btn-primary{
 	background-color: #86A136;
 	border: 0px;
@@ -141,7 +171,7 @@ strong{
 
 .featurePanel{
 	background-color: #46243D;
-	padding: 2em;
+	padding: 0.5em;
 	padding-top: 0.5em;
 }
 
@@ -152,9 +182,10 @@ strong{
 
 .featureContent{
 	margin-top: 0.3em;
-	padding: 1em;
+	padding: 0.5em;
 	text-decoration: none;
 	color: #fff;
+	text-align: center;
 }
 
 .featureContent:hover{
@@ -179,7 +210,7 @@ strong{
 }
 @media screen and (max-width:640px){
 	body{
-		font-size: 150%;
+		font-size: 140%;
 	}
 	.navbar-fixed-bottom{
 		height:12%;
@@ -200,6 +231,7 @@ strong{
 		text-align: center;
 		font-size: 1em;
 	}
+
 	.addBtn{
 		font-size: 1.5em;
 		font-weight: bold;
@@ -207,11 +239,20 @@ strong{
 		border-radius: 0px;
 		width: 3.7em;
 	}
-
+	.linkBtn{
+		margin-bottom: 1em;
+		border-radius: 100%;
+		padding-top: 0.7em;
+		font-weight: bold;
+	}
+	.eventHeader{
+		font-size: 130%;
+	}
 	.loginForm input, select{
 		height: 2em;
 		width: 13.5em;
 		font-size: 20px;
 		margin-bottom: 0.7em;
+		margin-right: 2em;
 	}
 }
