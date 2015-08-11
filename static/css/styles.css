@@ -1,5 +1,8 @@
 body{
 	background-color: #7F2A68;
+	background-image: url("../img/bg.jpg");
+	background-size: cover;
+	background-repeat:repeat-y;
 	color: #fff;
 	font-size: 150%;
 	font-family: monospace;
