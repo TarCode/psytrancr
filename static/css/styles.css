@@ -2,20 +2,27 @@ body{
 	background-color: #7F2A68;
 	color: #fff;
 	font-size: 150%;
+	font-family: monospace;
+	margin-top: 10%;
+	margin-bottom: 7%;
+}
+.topnav{
+	background-color: #222;
+
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
 }
 input{
 	color: #46243D;
 }
 .userHead{
-	display: block;
-	background-color: #46243D;
-	color: #fff;
-	padding: 3px;
-	padding-top: 10px;
-}
-.userHead p{
-	float: left;
-	margin-left: 10px;
+	text-align: right;
+	display: inline;
+	float: right;
+	background-color: #222;
+	padding-top: 0.4em;
+	display: inline-block;
 }
 .menuHead{
 	margin-top: 3.2em;
@@ -52,11 +59,8 @@ input{
 }
 
 .logo{
-	padding: 1.5em;
-	padding-left: 0em;
-	width: 50%;
-	height: auto;
-	margin-top: 5.5em;
+	width: 43%;
+	background-repeat: no-repeat;
 }
 
 .addBtn{
@@ -68,14 +72,17 @@ input{
 }
 .partyImg{
 	border-radius: 100%;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
+	width: 70%;
+	height: 70%;
+	margin-left: 15%;
 }
 .linkBtn{
-	width: 45%;
+	width: 6em;
 	height: 6em;
 	margin-bottom: 1em;
 	border-radius: 100%;
-	padding-top: 0.7em;
+	padding: 0.5em;
 	font-weight: bold;
 	margin-top: 1em;
 }
@@ -107,9 +114,9 @@ input{
 	float: right;
 	margin-top: 0px;
 	font-size: 12px;
+	margin-left: 10px;
+	margin-bottom: 1em;
 	margin-right: 10px;
-	margin-bottom: 3px;
-	border-radius: 0px;
 }
 
 .loginBtn{
@@ -130,11 +137,17 @@ input{
 strong{
 	color: #990;
 }
+
+.eventHeader{
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
 .nameBox{
-	min-height: 2em;
+	min-height: 4em;
 }
 .infoBox{
-	min-height: 5em;
+	min-height: 9em;
 }
 .buttonBox{
 	margin-left: 0.5em;
@@ -179,11 +192,15 @@ strong{
 	background-color: #46243D;
 	padding: 2em;
 }
-
+.featureHeader{
+	text-align: center;
+	font-weight: bold;
+}
 .featureContent{
 	margin-top: 0.3em;
-	padding: 0.5em;
+	padding: 1em;
 	text-decoration: none;
+	background-color: #46243D;
 	color: #fff;
 	text-align: center;
 }
@@ -192,10 +209,6 @@ strong{
 	text-decoration: none;
 	background-color: #554200;
 	color: #fff;
-}
-
-.eventHeader{
-	margin-top: 0;
 }
 
 .infoPane{
@@ -221,17 +234,15 @@ strong{
 		padding-top: 1em;
 	}
 
-	.logo{
-		float: left;
-	}
-
 	.backBtn{
 		float: none;
 		margin-left: 40%;
 		text-align: center;
 		font-size: 1em;
 	}
-
+	.featurePanel{
+		margin: 0px;
+	}
 	.addBtn{
 		font-size: 1.5em;
 		font-weight: bold;

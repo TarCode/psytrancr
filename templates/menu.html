@@ -1,33 +1,36 @@
 {% if session['name'] %}
 {% extends "layout.html" %}
 {% block body %}
-<div class = "row">
-	<div class = "featurePanel col-xs-12 col-md-12">
+
 		<h2 class = "featureHeader">Featured</h2>
+	<div class = "row">
 		{% for entry in entries %}
-			<div class = "featureContent col-xs-6 col-md-4">
+			<div class = "featureContent col-xs-6 col-md-3">
 				<a class = "eventAnc" href = "/events/{{entry.event_id}}">
-				<div class = "col-xs-12 col-md-12"><img class = "partyImg img-responsive" src = "{{entry.img_url}}"/></div>
+				<div  class = "row">
+					<div class = "col-xs-12 col-md-12"><img class = "partyImg img-responsive" src = "{{entry.img_url}}"/></div>
+				</div>
+				<div class = "row">
 				<div class = "nameBox col-xs-12 col-md-12">
 					<h2 class = "eventHeader">{{ entry.event_name }}</h2>
 				</div>
+			</div>
+			<div class = "row">
 				<div class = "infoBox col-xs-12 col-md-12">
 					<ul class = "infoPane">
 						<li><strong>Start Date:</strong> {{ entry.startDate }}
-							<br/>
-							<strong>End Date:</strong> {{ entry.endDate }}</li>
+							<br/><strong>End Date:</strong> {{ entry.endDate }}</li>
 						<li><strong>Venue:</strong> <br/>{{ entry.venue }}</li>
-
 					</ul>
 				</div>
+			</div>
 			</a>
 				<div class = "buttonBox col-xs-12 col-md-12">
-					<a class="btn btn-primary linkBtn" target = "blank" href="{{entry.facebook}}" role="button"><br/>Facebook</a>
-					<a class="btn btn-primary linkBtn" target = "blank" href="{{entry.tickets}}" role="button"><br/>Tickets</a>
+					<a class="btn btn-primary linkBtn" target = "blank" href="{{entry.facebook}}" role="button"><br/><i class="fa fa-facebook fa-3x"></i></a>
+					<a class="btn btn-primary linkBtn" target = "blank" href="{{entry.tickets}}" role="button"><br/><i class="fa fa-ticket fa-3x"></i></a>
 				</div>
 			</div>
 		{% endfor %}
 	</div>
-</div>
 {% endblock %}
 {% endif %}
