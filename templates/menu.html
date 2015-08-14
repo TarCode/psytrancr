@@ -2,10 +2,10 @@
 {% extends "layout.html" %}
 {% block body %}
 
-		<h2 class = "featureHeader">Featured</h2>
+	<h2 class = "featureHeader">Featured</h2>
 	<div class = "row">
 		{% for entry in entries %}
-			<div class = "featureContent col-xs-6 col-md-3">
+			<div class = "featureContent col-xs-3 col-md-3">
 				<a class = "eventAnc" href = "/events/{{entry.event_id}}">
 				<div  class = "row">
 					<div class = "col-xs-12 col-md-12"><img class = "partyImg img-responsive" src = "{{entry.img_url}}"/></div>
