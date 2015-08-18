@@ -41,10 +41,5 @@
 <br/>Hello there, <strong>{{session['name']}}</strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a>
 </div>
   {% endif %}
-<div class= "container">
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
 
   {% block body %}{% endblock %}
-</div>

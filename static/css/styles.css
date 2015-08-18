@@ -228,6 +228,15 @@ strong{
 	body{
 		font-size: 140%;
 	}
+	.linkBtn{
+		width: 5em;
+		height: 5em;
+		margin-bottom: 1em;
+		border-radius: 100%;
+		padding: 0.5em;
+		font-weight: bold;
+		margin-top: 1em;
+	}
 	.navbar-fixed-bottom{
 		height:12%;
 	}
