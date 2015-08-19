@@ -10,7 +10,8 @@ body{
 	margin-bottom: 7%;
 }
 .container{
-	padding: 5em;
+	padding-left: 5em;
+	padding-right: 5em;
 }
 .topnav{
 	background-color: #222;
@@ -205,6 +206,7 @@ strong{
 .featureHeader{
 	text-align: center;
 	font-weight: bold;
+	margin-bottom: 0em;
 }
 .featureContent{
 	margin-top: 0.3em;
