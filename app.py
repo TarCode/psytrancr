@@ -1,6 +1,7 @@
 from werkzeug.contrib.fixers import ProxyFix
 from flask.ext.mysqldb import MySQL
 from flask.ext.bcrypt import Bcrypt
+from flask.ext.mail import Mail, Message
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash
 
@@ -16,19 +17,30 @@ app.config['MYSQL_PORT'] = 3306
 app.config['MYSQL_USER'] = 'tarcode'
 app.config['MYSQL_PASSWORD'] = 'coder123'
 app.config['MYSQL_DB'] = 'psytrancr'
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'psytrancrapp@gmail.com'
+app.config['MAIL_PASSWORD'] = 'kanqxjdmrqinukjn'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+mail = Mail(app)
+#app.config['DEFAULT_MAIL_SENDER'] =  None
+
 #	app.config['MYSQL_CHARSET'] = 'utf-8'
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
 		cur = mysql.connection.cursor()
-		cur.execute('''SELECT password FROM users WHERE username = \"%s\" ''' %request.form['username'])
-		entries = [dict(password=row[0]) for row in cur.fetchall()]
+		cur.execute('''SELECT password, username FROM users WHERE username = (%s) OR email = (%s)''', (request.form['username'],request.form['username']))
+		entries = [dict(password=row[0], username=row[1]) for row in cur.fetchall()]
 
 		if entries != [] and request.form['username'] != None and request.form['password'] != None:
 			pw_hash = entries[0]['password']
 			if bcrypt.check_password_hash(pw_hash, request.form['password']):
-			    session['name'] = request.form['username']
+			    session['name'] = entries[0]["username"]
 			    # And then redirect the user to the main page
 			    return redirect(url_for('show_menu'))
 			elif request.form['password'] != entries[0]['password']:
@@ -44,16 +56,18 @@ def login():
 
 @app.route('/signUp', methods = ['GET', 'POST'])
 def signUp():
-	if request.method == 'POST':
-		if(request.form['password'] == request.form['password2']):
-			pw_hash = bcrypt.generate_password_hash(request.form['password'],10)
-			cur = mysql.connection.cursor()
-			cur.execute('''INSERT INTO users VALUES (%s, %s) ''', (request.form['username'], pw_hash))
-			mysql.connection.commit()
-			return redirect(url_for('login'))
-		else:
+    if request.method == 'POST':
+        if(request.form['password'] == request.form['password2']):
+            pw_hash = bcrypt.generate_password_hash(request.form['password'],10)
+            cur = mysql.connection.cursor()
+            cur.execute('''INSERT INTO users VALUES (%s, %s, %s) ''', (request.form['username'], request.form['email'], pw_hash))
+            mysql.connection.commit()
+            msg = Message("Please confirm email address!", sender="psytrancrapp@gmail.com", recipients=[request.form['email']])
+            mail.send(msg)
+            return render_template('login.html', msg = "Successfully Signed Up")
+        else:
 			return render_template('signUp.html', msg = "Passwords do not match")
-	else:
+    else:
     		return render_template('signUp.html')
 
 @app.route('/home')
@@ -94,5 +108,5 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
 
         app.run(debug=True,
-        host= "172.18.0.186",
+        host= "0.0.0.0",
     port=int("5000"))
