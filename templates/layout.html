@@ -11,17 +11,16 @@
 <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
     <a class="navbar-brand logo" href="/"><img class = "img-responsive logo" src = "{{ url_for('static', filename='./img/logo.png') }}"></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse">
+  <div class="collapse navbar-collapse" id = "myNavbar">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Going</a></li>
       <li><a href="#">Profile</a></li>
@@ -41,5 +40,9 @@
 <br/>Hello there, <strong>{{session['name']}}</strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a>
 </div>
   {% endif %}
+<script src = "{{url_for('static', filename='./js/jquery.min.js')}}"></script>
+<script src = "{{url_for('static', filename='./js/script.js')}}"></script>
+<script src = "{{url_for('static', filename='./js/bootstrap.min.js')}}"></script>
+
 
   {% block body %}{% endblock %}

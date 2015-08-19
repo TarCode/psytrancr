@@ -4,10 +4,13 @@ body{
 	background-size: cover;
 	background-repeat:repeat-y;
 	color: #fff;
-	font-size: 150%;
+	font-size: 160%;
 	font-family: monospace;
 	margin-top: 10%;
 	margin-bottom: 7%;
+}
+.container{
+	padding: 5em;
 }
 .topnav{
 	background-color: #222;
@@ -75,10 +78,8 @@ input{
 }
 .partyImg{
 	border-radius: 100%;
-	margin-bottom: 1em;
-	width: 70%;
-	height: 70%;
-	margin-left: 15%;
+	width: 100%;
+	height: 100%;
 }
 .linkBtn{
 	width: 6em;
@@ -142,12 +143,18 @@ strong{
 }
 
 .eventHeader{
-	margin-top: 0;
-	font-size: 1.5em;
+	margin-top: 0.4em;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+.eventName{
+	margin-top: 0.4em;
+	font-size: 1.6em;
+	font-weight: bold;
 }
 
 .nameBox{
-	min-height: 4em;
+	min-height: 7.5em;
 }
 .infoBox{
 	min-height: 9em;
@@ -201,16 +208,18 @@ strong{
 }
 .featureContent{
 	margin-top: 0.3em;
-	padding: 1em;
+	margin: 0.3em;
+	width: 31%;
+	padding-top: 1em;
 	text-decoration: none;
-	background-color: #46243D;
 	color: #fff;
+	opacity: 1;
 	text-align: center;
 }
 
 .featureContent:hover{
 	text-decoration: none;
-	background-color: #554200;
+  opacity: 0.5;
 	color: #fff;
 }
 
@@ -224,9 +233,14 @@ strong{
 	padding:0;
 	margin:0;
 }
-@media screen and (max-width:640px){
+@media screen and (max-width:1000px){
 	body{
 		font-size: 140%;
+		margin-bottom: 15%;
+		margin-top: 18%;
+	}
+	.container{
+		padding: 0em;
 	}
 	.linkBtn{
 		width: 5em;
@@ -255,6 +269,12 @@ strong{
 	.featurePanel{
 		margin: 0px;
 	}
+	.featureContent{
+		width: 45%;
+	}
+	.nameBox{
+		min-height: 6.7em;
+	}
 	.addBtn{
 		font-size: 1.5em;
 		font-weight: bold;
@@ -269,7 +289,8 @@ strong{
 		font-weight: bold;
 	}
 	.eventHeader{
-		font-size: 130%;
+		font-size: 100%;
+		font-weight: bold;
 	}
 	.loginForm input, select{
 		height: 2em;

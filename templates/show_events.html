@@ -3,7 +3,7 @@
 {% block body %}
   <div class = "container">
     <h3 class = "text-center">{{msg}}</h3>
-    <a class="btn btn-default backBtn" href="/menu" role="button">Back</a>
+    <a class="btn btn-default backBtn" href="/" role="button">Back</a>
     <form class = "loginForm text-center" action="/events" method = "post">
   		<input name = "event_name" placeholder = "event name" type = "text"></input>
   		<button class = "btn btn-primary addBtn">Add</button>
@@ -11,10 +11,10 @@
     <table class = "table table-bordered table-striped">
 
     {% for entry in entries %}
-    <div class = "featureContent row">
-      <div class = "col-xs-4 col-md-4"><img class = "img-responsive" src = "{{entry.img_url}}"/></div>
-      <div class = "col-xs-6 col-md-6">
-        <h2 class = "eventHeader">{{ entry.event_name }}</h2>
+    <div class = "container">
+      <div class = "col-xs-12 col-md-4"><img class = "img-responsive" src = "{{entry.img_url}}"/></div>
+      <div class = "col-xs-12 col-md-8">
+        <h2 class = "text-center eventName">{{ entry.event_name }}</h2>
         <ul class = "infoPane">
           <li><strong>Date:</strong> {{ entry.startDate }} - {{ entry.endDate }}</li>
           <br/>
@@ -23,9 +23,13 @@
           <li><strong>About:</strong> {{ entry.about }}</li>
         </ul>
       </div>
-      <div class = "col-xs-2 col-md-2">
+      <div class = "row col-xs-12">
+        <div class = "col-xs-3 col-md-4"></div>
+        <div class = "col-xs-8 col-md-4">
         <a class="btn btn-primary linkBtn" target = "blank" href="{{entry.facebook}}" role="button"><br/>Facebook</a>
         <a class="btn btn-primary linkBtn" target = "blank" href="{{entry.tickets}}" role="button"><br/>Tickets</a>
+        </div>
+        <div class = "col-xs-1 col-md-4"></div>
       </div>
     </div>
     {% else %}

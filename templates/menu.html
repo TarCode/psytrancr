@@ -5,17 +5,15 @@
 	<h2 class = "featureHeader">Featured</h2>
 	<div class = "container">
 		{% for entry in entries %}
-
 				<a class = "eventAnc" href = "/events/{{entry.event_id}}">
-					<div class = "featureContent col-xs-12 col-md-6">
-						<div class = "col-xs-6 col-md-8">
+					<div class = "featureContent col-xs-6 col-md-4">
+						<div class = "col-xs-12 col-md-12">
 							<img class = "partyImg img-responsive" src = "{{entry.img_url}}"/>
 						</div>
-						<div class = "nameBox col-xs-6 col-md-4">
+						<div class = "nameBox col-xs-12 col-md-12">
 						</br>
 							<h2 class = "eventHeader">{{ entry.event_name }}</h2>
 						</br>
-							<p><strong>Venue:</strong> {{ entry.venue }}</p>
 						</div>
 					</div>
 				</a>
