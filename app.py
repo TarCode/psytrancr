@@ -94,7 +94,9 @@ def show_events(event_id):
         	cur = mysql.connection.cursor()
         	cur.execute('''SELECT img_url, event_name, startDate, endDate, venue, about, facebook, tickets FROM events, event_info, links WHERE events.event_id = \"%s\" AND events.event_info_id = event_info.id AND events.event_id = links.event_id''' %(event_id))
                 entries = [dict(img_url=row[0], event_name=row[1], startDate=row[2], endDate=row[3], venue=row[4], about=row[5], facebook=row[6], tickets=row[7]) for row in cur.fetchall()]
-        	return render_template('show_events.html', entries=entries)
+                cur.execute('''SELECT artist, artist_link, artist_img FROM artists WHERE artists.event_id = \"%s\"''' %(event_id))
+                artists = [dict(artist=row[0], artist_link=row[1], artist_img=row[2]) for row in cur.fetchall()]
+        	return render_template('show_events.html', entries=entries, artists=artists)
 
 @app.route('/clear')
 def clearsession():

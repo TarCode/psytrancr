@@ -5,7 +5,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='./css/styles.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='./css/font-awesome.min.css') }}">
 
-
+<body>
   {% if session['name'] %}
 <nav class="navbar navbar-default navbar-fixed-top topnav ">
 <div class="container-fluid">
@@ -40,9 +40,11 @@
 <br/>Hello there, <strong>{{session['name']}}</strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a>
 </div>
   {% endif %}
+  
+  {% block body %}{% endblock %}
+
 <script src = "{{url_for('static', filename='./js/jquery.min.js')}}"></script>
 <script src = "{{url_for('static', filename='./js/script.js')}}"></script>
 <script src = "{{url_for('static', filename='./js/bootstrap.min.js')}}"></script>
 
-
-  {% block body %}{% endblock %}
+</body>

@@ -2,17 +2,16 @@ body{
 	background-color: #7F2A68;
 	background-image: url("../img/bg.jpg");
 	background-size: cover;
-	background-repeat:repeat-y;
+	background-repeat:no-repeat;
 	color: #fff;
 	font-size: 160%;
 	font-family: monospace;
 	margin-top: 10%;
+	margin-right: 0px;
+	padding-right: 0px;
 	margin-bottom: 7%;
 }
-.container{
-	padding-left: 5em;
-	padding-right: 5em;
-}
+
 .topnav{
 	background-color: #222;
 
@@ -90,6 +89,7 @@ input{
 	padding: 0.5em;
 	font-weight: bold;
 	margin-top: 1em;
+	float: right;
 }
 .tblBtn{
 	width: 100%;
@@ -114,7 +114,10 @@ input{
 	margin-bottom: 1em;
 	border-radius: 0px;
 }
-
+.container{
+	width: 90%;
+	padding: 7%;
+}
 .logoutBtn{
 	float: right;
 	margin-top: 0px;
@@ -230,7 +233,11 @@ strong{
 	padding-left: 0;
 	padding: 0.5em;
 }
-
+.artistPane{
+	background-color: #46243D;
+	padding-bottom: 2em;
+	width: 101%;
+}
 .navbar-fixed-bottom{
 	padding:0;
 	margin:0;
@@ -240,6 +247,9 @@ strong{
 		font-size: 140%;
 		margin-bottom: 15%;
 		margin-top: 18%;
+	}
+	h3{
+		font-size: 75%;
 	}
 	.container{
 		padding: 0em;
@@ -252,6 +262,7 @@ strong{
 		padding: 0.5em;
 		font-weight: bold;
 		margin-top: 1em;
+		float: right;
 	}
 	.navbar-fixed-bottom{
 		height:12%;
@@ -261,7 +272,11 @@ strong{
 		height: 3.5em;
 		padding-top: 1em;
 	}
-
+	.artistPane{
+		background-color: #46243D;
+		padding-bottom: 2em;
+		width: 103%;
+	}
 	.backBtn{
 		float: none;
 		margin-left: 40%;
