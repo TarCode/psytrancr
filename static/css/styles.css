@@ -2,7 +2,7 @@ body{
 	background-color: #7F2A68;
 	background-image: url("../img/bg.jpg");
 	background-size: cover;
-	background-repeat:no-repeat;
+	background-repeat: repeat-y;
 	color: #fff;
 	font-size: 160%;
 	font-family: monospace;
@@ -82,14 +82,12 @@ input{
 	height: 100%;
 }
 .linkBtn{
-	width: 6em;
-	height: 6em;
-	margin-bottom: 1em;
-	border-radius: 100%;
-	padding: 0.5em;
-	font-weight: bold;
-	margin-top: 1em;
-	float: right;
+	color: #fff;
+	padding: 1em;
+	margin: 1em;
+}
+.btnPanel{
+	padding: 0.3em;
 }
 .tblBtn{
 	width: 100%;
@@ -235,7 +233,7 @@ strong{
 }
 .artistPane{
 	background-color: #46243D;
-	padding-bottom: 2em;
+	padding-top: 2em;
 	width: 101%;
 }
 .navbar-fixed-bottom{
@@ -248,22 +246,24 @@ strong{
 		margin-bottom: 15%;
 		margin-top: 18%;
 	}
+
 	h3{
-		font-size: 75%;
+		font-weight: bold;
+		font-size: 120%;
 	}
 	.container{
 		padding: 0em;
 	}
 	.linkBtn{
-		width: 5em;
-		height: 5em;
-		margin-bottom: 1em;
-		border-radius: 100%;
-		padding: 0.5em;
-		font-weight: bold;
-		margin-top: 1em;
-		float: right;
+		color: #fff;
+		padding-bottom: 0em;
+		margin: 0em;
 	}
+	.btnPanel{
+		padding: 1em;
+
+	}
+
 	.navbar-fixed-bottom{
 		height:12%;
 	}
@@ -274,7 +274,7 @@ strong{
 	}
 	.artistPane{
 		background-color: #46243D;
-		padding-bottom: 2em;
+		padding-left: 0.5em;
 		width: 103%;
 	}
 	.backBtn{
@@ -300,14 +300,16 @@ strong{
 		width: 3.7em;
 	}
 	.linkBtn{
-		margin-bottom: 1em;
-		border-radius: 100%;
-		padding-top: 0.7em;
-		font-weight: bold;
+		color: #fff;
+		text-align: center;
 	}
 	.eventHeader{
 		font-size: 100%;
 		font-weight: bold;
+	}
+	.eventName{
+		font-weight: bold;
+		font-size: 170%;
 	}
 	.loginForm input, select{
 		height: 2em;
