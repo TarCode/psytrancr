@@ -35,14 +35,19 @@
     <div class = "row artistPane">
       <h3 class = "text-center">International Line-Up</h3>
     </br>
-      <div class = "col-xs-0 col-md-1"></div>
+      <div class = "col-xs-0 col-md-2"></div>
       {% for artist in artists %}
-      <div class = "col-xs-4 col-md-2">
+      <div class = "col-xs-3 col-md-2">
         <a href="{{artist.artist_link}}" target = "blank"><img class = "partyImg img-responsive" src = "{{artist.artist_img}}"/></a>
         <h3 class = "text-center">{{artist.artist}}</h3>
       </div>
       {% endfor %}
-      <div class = "col-xs-0 col-md-1"></div>
+      <div class = "col-xs-0 col-md-2"></div>
     </div>
+    {% for entry in entries %}
+    <div class="video-container">
+      <iframe id="ytplayer" type="text/html" src="{{entry.video}}" frameborder="0"/>
+    </div>
+    {% endfor %}
 {% endblock %}
 {% endif %}
