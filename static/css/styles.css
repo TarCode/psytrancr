@@ -68,11 +68,7 @@ input{
 	border-radius: 0px;
 	width: 6em;
 }
-.partyImg{
-	border-radius: 100%;
-	width: 100%;
-	height: 100%;
-}
+
 .linkBtn{
 	color: #fff;
 	padding: 1em;
@@ -105,8 +101,7 @@ input{
 	border-radius: 0px;
 }
 .container{
-	width: 90%;
-	padding: 7%;
+
 }
 .logoutBtn{
 	float: right;
@@ -217,16 +212,30 @@ strong{
   opacity: 0.5;
 	color: #fff;
 }
-
 .infoPane{
 	list-style: none;
 	padding-left: 0;
-	padding: 0.5em;
+	padding: 2em;
 }
 .artistPane{
 	background-color: #46243D;
-	padding-top: 2em;
-	width: 101%;
+	padding: 2em;
+	width: 100%;
+}
+.partyBanner{
+	display: inline;
+	max-width: 100%;
+}
+.artist{
+  max-width: 19%;
+	padding: 1em;
+	display: inline-block;
+}
+.partyImg{
+	border-radius: 100%;
+	display: inline;
+	max-width: 50%;
+	height: auto;
 }
 .navbar-fixed-bottom{
 	padding:0;
@@ -245,6 +254,7 @@ strong{
     position: absolute;
     top: 0;
     left: 0;
+		padding: 2em;
     width: 100%;
     height: 100%;
 }
@@ -271,7 +281,9 @@ strong{
 		padding: 1em;
 
 	}
-
+	.artist{
+	  max-width: 100%;
+	}
 	.navbar-fixed-bottom{
 		height:12%;
 	}
@@ -282,8 +294,7 @@ strong{
 	}
 	.artistPane{
 		background-color: #46243D;
-		padding-left: 0.5em;
-		width: 103%;
+		padding: 0em;
 	}
 	.backBtn{
 		float: none;

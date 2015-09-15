@@ -3,12 +3,11 @@
 {% block body %}
     <h3 class = "text-center">{{msg}}</h3>
 
-    <div class = "container">
+    <div class = "text-center container">
     {% for entry in entries %}
       <a class="btn btn-default backBtn" href="/" role="button">Back</a>
       <h2 class = "text-center eventName">{{ entry.event_name }}</h2>
-      <span><img class = "img-responsive" src = "{{entry.cover_url}}"/></span>
-      <div class = "col-xs-12 col-md-12">
+        <img class = "partyBanner" src = "{{entry.cover_url}}"/>
         <ul class = "infoPane">
           <li><strong>Date:</strong> {{ entry.startDate }} - {{ entry.endDate }}</li>
           <br/>
@@ -16,15 +15,10 @@
           <br/>
           <li><strong>About:</strong> {{ entry.about }}</li>
         </ul>
-      </div>
 
-      <div class = "row btnPanel">
-        <div class = "col-xs-2 col-md-4"></div>
-        <div class = "col-xs-8 col-md-4">
+      <div class = "container text-center btnPanel">
           <a class="linkBtn" target = "blank" href="{{entry.facebook}}" role="button"><i class="fa fa-facebook fa-4x"></i></a>
           <a class="linkBtn" target = "blank" href="{{entry.tickets}}" role="button"><i class="fa fa-ticket fa-4x"></i></a>
-        </div>
-        <div class = "col-xs-2 col-md-4"></div>
 
       </div>
 
@@ -32,17 +26,12 @@
       <em>Unbelievable.  No entries here so far</em>
     {% endfor %}
     </div>
-    <div class = "row artistPane">
-      <h3 class = "text-center">International Line-Up</h3>
+    <div class = "text-center container artistPane">
+      <h3>International Line-Up</h3>
     </br>
-      <div class = "col-xs-0 col-md-2"></div>
       {% for artist in artists %}
-      <div class = "col-xs-3 col-md-2">
-        <a href="{{artist.artist_link}}" target = "blank"><img class = "partyImg img-responsive" src = "{{artist.artist_img}}"/></a>
-        <p class = "text-center">{{artist.artist}}</p>
-      </div>
+        <a class = "artist" href="{{artist.artist_link}}" target = "blank"><img class = "img-responsive partyImg" src = "{{artist.artist_img}}"/></br>{{artist.artist}}</a>
       {% endfor %}
-      <div class = "col-xs-0 col-md-2"></div>
     </div>
     {% for entry in entries %}
     <div class="video-container">
