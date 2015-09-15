@@ -329,9 +329,19 @@ strong{
 	}
 	.loginForm input, select{
 		height: 2em;
-		width: 13.5em;
+		width: 12.5em;
 		font-size: 20px;
 		margin-bottom: 0.7em;
 		margin-right: 2em;
+		margin-left: 9%;
+	}
+
+	.loginBtn{
+		height: 2em;
+		width: 12.5em;
+		font-size: 20px;
+		margin-bottom: 0.7em;
+		margin-right: 2em;
+		margin-left: 9%;
 	}
 }

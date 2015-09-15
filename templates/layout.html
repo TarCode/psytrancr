@@ -25,8 +25,9 @@
       <li><a href="#">Going</a></li>
       <li><a href="#">Profile</a></li>
       <li><a href="#">Settings</a></li>
+      <li><a class = "logoutBtn" href="/clear">Logout </a></li>
     </ul>
-    <form class="navbar-form navbar-right" role="search">
+    <form class="navbar-form text-center" role="search">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
       </div>
@@ -37,10 +38,10 @@
 </div><!-- /.container-fluid -->
 </nav>
 <div class = "userHead navbar-fixed-bottom">
-<br/>Hello there, <strong>{{session['name']}}</strong><a class="btn btn-default logoutBtn" href="/clear" role="button">Logout</a>
+
 </div>
   {% endif %}
-  
+
   {% block body %}{% endblock %}
 
 <script src = "{{url_for('static', filename='./js/jquery.min.js')}}"></script>
